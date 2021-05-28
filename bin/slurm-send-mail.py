@@ -336,9 +336,14 @@ def process_spool_file(f: pathlib.Path, first_job_id: int, state: str):
                     EMAIL_FROM=email_from_name
                 )
 
+        msg_state = state
+        if msg_state == 'Began':
+            msg_state = 'Started'
+        msg_state = msg_state.lower()
+
         msg = MIMEMultipart("alternative")
         msg['subject'] = Template(email_subject).substitute(
-            CLUSTER=job.cluster, JOB_ID=job.id, STATE=state
+            CLUSTER=job.cluster, JOB_ID=job.id, STATE=msg_state 
         )
         msg['To'] = "{0} <{1}>".format(job.user, user_email)
         msg['From'] = email_from_address
