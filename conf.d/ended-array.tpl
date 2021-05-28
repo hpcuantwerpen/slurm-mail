@@ -6,19 +6,15 @@
 </head>
 <body>
 
-<p>Dear $USER,</p>
+<p>Dear CalcUA user</p>
 
-<p>Your job $JOB_ID of job array $ARRAY_JOB_ID has $END_TXT on $CLUSTER.</p>
-
-<p>Details about the job can be found in the table below:</p>
+<p>Your job $JOB_ID of job array $ARRAY_JOB_ID has $END_TXT on cluster $CLUSTER.</p>
 
 $JOB_TABLE
 
 $JOB_OUTPUT
 
-<p>Regards,</p>
-
-<p>$EMAIL_FROM</p>
+<p></p>
 
 <p><i>Note: This is an automated e-mail.</i></p>
 
